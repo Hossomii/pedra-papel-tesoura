@@ -305,3 +305,17 @@ html.soft-mode .btn-voltar:hover {
     background-color: var(--amarelo);
     color: #333;
 }
+
+.explicacao-jogo {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  line-height: 3vh;
+}
+
+.explicacao-jogo span{
+  color: var(--titulo)
+}
+ul {
+  list-style: none;
+}
