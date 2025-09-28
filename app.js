@@ -37,31 +37,31 @@ function escolhaPlayer(escolha) {
   let resultado = "";
 
   // Lógica do Jogo
-  if (escolha == "pedra") {
-    if (computerMove == "pedra") {
+  if (escolha == "firewall") {
+    if (computerMove == "firewall") {
       resultado = "empate";
-    } else if (computerMove == "papel") {
-      resultado = "você perdeu";
-    } else {
+    } else if (computerMove == "vírus") {
       resultado = "você ganhou";
-    }
-  }
-
-  if (escolha == "papel") {
-    if (computerMove == "pedra") {
-      resultado = "você ganhou";
-    } else if (computerMove == "papel") {
-      resultado = "empate";
     } else {
       resultado = "você perdeu";
     }
   }
 
-  if (escolha == "tesoura") {
-    if (computerMove == "pedra") {
+  if (escolha == "vírus") {
+    if (computerMove == "firewall") {
       resultado = "você perdeu";
-    } else if (computerMove == "papel") {
+    } else if (computerMove == "vírus") {
+      resultado = "empate";
+    } else {
       resultado = "você ganhou";
+    }
+  }
+
+  if (escolha == "código") {
+    if (computerMove == "firewall") {
+      resultado = "você ganhou";
+    } else if (computerMove == "vírus") {
+      resultado = "você perdeu";
     } else {
       resultado = "empate";
     }
@@ -100,7 +100,7 @@ function escolhaPlayer(escolha) {
 
 // Função para escolha aleatória do computador 
 function escolhaComputador() {
-  const opcoes = ["pedra", "papel", "tesoura"];
+  const opcoes = ["firewall", "vírus", "código"];
   return opcoes[Math.floor(Math.random() * 3)];
 }
 

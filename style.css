@@ -36,6 +36,11 @@ header {
   margin: 20px 0;
 }
 
+section {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
 .container {
   border-top: 3px solid rgba(255, 0, 255, 0.5);
   border-left: 3px solid rgba(0, 255, 255, 0.5);
@@ -116,12 +121,6 @@ h1, p {
   color: var(--titulo);
 }
 
-footer {
-  margin: 30px;
-  text-align: center;
-  color: var(--resultado);
-}
-
 .conquistaPopUp {
   opacity: 0;
   transform: translateY(20px);
@@ -132,4 +131,32 @@ footer {
 .conquistaPopUp.mostrar {
   opacity: 1;
   transform: translateY(0);
+}
+
+.explicacao-jogo {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  width: auto;
+  padding: 0;
+  color: white;
+  margin: 20px 0;
+}
+
+.explicacao-jogo-p {
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+span {
+  color: var(--verde-muito-claro);
+}
+
+footer {
+  width: 500px;
+  margin: auto;
+  text-align: center;
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pedra, Papel ou Tesoura</title>
+    <title>Firewall, Vírus ou Código</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -18,16 +18,16 @@
     </header>
     <section>
       <div class="container">
-        <h1 class="title">Pedra, Papel ou Tesoura?</h1>
+        <h1 class="title">Firewall, Vírus ou Código?</h1>
         <div class="container-btn">
-          <button onclick="escolhaPlayer('pedra')">
-            <i class="fa-regular fa-hand-back-fist"></i>
+          <button onclick="escolhaPlayer('firewall')">
+            <i class="fa-solid fa-shield-halved"></i>
           </button>
-          <button onclick="escolhaPlayer('papel')">
-            <i class="fa-regular fa-hand"></i>
+          <button onclick="escolhaPlayer('vírus')">
+            <i class="fa-solid fa-skull"></i>
           </button>
-          <button onclick="escolhaPlayer('tesoura')">
-            <i class="fa-regular fa-hand-peace"></i>
+          <button onclick="escolhaPlayer('código')">
+            <i class="fa-solid fa-laptop-code"></i>
           </button>
         </div>
         <div class="resultado">
@@ -36,7 +36,19 @@
       </div>
     </section>
 
-    <footer>2025 &copy Hossomi</footer>
+    <footer>
+      <div class="explicacao-jogo">
+        <h3>Regras do Jogo</h3>
+        <p class="explicacao-jogo-p">Firewall, Vírus e Código é a versão futurista do clássico “pedra, papel e tesoura”.</p>
+
+        <ul>
+          <li><span>Firewall</span> bloqueia o <span>Vírus</span>.</li>
+          <li><span>Vírus</span> corrompe o <span>Código</span>.</li>
+          <li><span>Código</span> contorna o <span>Firewall</span>.</li>
+        </ul>
+      </div>
+      <p class="copyR">2025 &copy Hossomi</p>
+    </footer>
 
     <script src="app.js"></script>
   </body>
