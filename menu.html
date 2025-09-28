@@ -1,27 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="menu.css">
-  <link rel="stylesheet" href="colors.css">
-  <title>Menu Game</title>
-</head>
-<body>
-  <h1>FIREWALL, VÍRUS E CÓDIGO</h1>
-  <button onclick="
-    window.location.href = 'index.html';
-   ">PLAY</button>
-  <button onclick="
-    window.location.href= 'options.html';
-    ">OPTIONS</button>
-  <button>CREDITS</button>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Menu</title>
 
-  <script>
-    function comecarJogo() {
+    <script>
+      (function () {
+        const theme = localStorage.getItem("theme");
+        if (theme === "soft") {
+          document.documentElement.classList.add("soft-mode");
+        }
+      })();
+    </script>
+    
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="menu.css" />
+  </head>
+  <body>
+    <h1>Pedra, papel ou tesoura</h1>
 
-    }
-  </script>
-  <script src="options.js"></script>
-</body>
+    <div class="menu-container">
+      <button
+        class="btn-menu btn-play"
+        onclick="window.location.href = 'index.html';"
+      >
+        Play
+      </button>
+
+      <button
+        class="btn-menu btn-secondary"
+        onclick="window.location.href ='options.html';"
+      >
+        Options
+      </button>
+
+      <button class="btn-menu btn-secondary">Credits</button>
+    </div>
+
+    <footer>
+      <p class="copyR">2025 &copy Hossomi</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
 </html>

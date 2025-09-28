@@ -37,31 +37,31 @@ function escolhaPlayer(escolha) {
   let resultado = "";
 
   // Lógica do Jogo
-  if (escolha == "firewall") {
-    if (computerMove == "firewall") {
+  if (escolha == "pedra") {
+    if (computerMove == "pedra") {
       resultado = "empate";
-    } else if (computerMove == "vírus") {
-      resultado = "você ganhou";
-    } else {
+    } else if (computerMove == "papel") {
       resultado = "você perdeu";
-    }
-  }
-
-  if (escolha == "vírus") {
-    if (computerMove == "firewall") {
-      resultado = "você perdeu";
-    } else if (computerMove == "vírus") {
-      resultado = "empate";
     } else {
       resultado = "você ganhou";
     }
   }
 
-  if (escolha == "código") {
-    if (computerMove == "firewall") {
+  if (escolha == "papel") {
+    if (computerMove == "pedra") {
       resultado = "você ganhou";
-    } else if (computerMove == "vírus") {
+    } else if (computerMove == "papel") {
+      resultado = "empate";
+    } else {
       resultado = "você perdeu";
+    }
+  }
+
+  if (escolha == "tesoura") {
+    if (computerMove == "pedra") {
+      resultado = "você perdeu";
+    } else if (computerMove == "papel") {
+      resultado = "você ganhou";
     } else {
       resultado = "empate";
     }
@@ -100,7 +100,7 @@ function escolhaPlayer(escolha) {
 
 // Função para escolha aleatória do computador 
 function escolhaComputador() {
-  const opcoes = ["firewall", "vírus", "código"];
+  const opcoes = ["pedra", "papel", "tesoura"];
   return opcoes[Math.floor(Math.random() * 3)];
 }
 
@@ -114,17 +114,17 @@ function resultStyle() {
 
 // Função de áudio
 function audio(resultado) {
-  (resultado === 'você perdeu' ? new Audio("gameover.wav") : new Audio("win.wav")).play(); // Operador ternário
+  const soundToPlay = resultado === 'você perdeu' ? "gameover.wav" : "win.wav";
+  playSound(soundToPlay); // Chama a função e usa o resultado como parametro para tocar o áudio correto
 }
 
 function verificarConquista(vitorias) {
-  let conquista = new Audio("conquista.wav");
 
   for (let item of conquistas) {
     if (vitorias === item.vitorias && !item.desbloqueada) {
       item.desbloqueada = true;
       exibirConquista(item.texto);
-      conquista.play();
+      playSound("conquista.wav");
       return true;
     }
   }

@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="colors.css">
-  <title>Game Options</title>
-</head>
-<body>
-  Dark Mode: <input type="button" id="ativar" value="Ativar" onclick="
-    document.body.classList.add('dark-mode');
-    "> 
-  
-  <input type="button" id="desativar" value="Desativar" onclick="
-    document.body.classList.remove('dark-mode')
-  ">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Options</title>
 
-  <input type="button" value="Voltar" onclick="window.location.href = 'menu.html'">
+    <script>
+      (function () {
+        const theme = localStorage.getItem("theme");
+        if (theme === "soft") {
+          document.documentElement.classList.add("soft-mode");
+        }
+      })();
+    </script>
 
-  <script src="options.js">
-  </script>
-</body>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <section id="options-container">
+      <h1>Menu de Opções</h1>
+
+      <div class="option-group">
+        <h3>Tema Visual</h3>
+        <div class="container-btn">
+          <button id="btnLight" class="btn-player">Light Mode</button>
+          <button id="btnDark" class="btn-player">Dark Mode</button>
+        </div>
+      </div>
+
+      <div class="option-group">
+        <h3>Volume dos Efeitos</h3>
+        <div class="container-btn">
+          <button id="btnMudo" class="btn-player">Mutar (0%)</button>
+          <button id="btnMedio" class="btn-player">Médio (50%)</button>
+          <button id="btnAlto" class="btn-player">Alto (100%)</button>
+        </div>
+      </div>
+    </section>
+
+    <button class="btn-voltar" onclick="window.location.href = 'menu.html'">
+      Voltar ao Menu
+    </button>
+
+    <footer>
+      <p class="copyR">2025 &copy Hossomi</p>
+    </footer>
+
+    <script src="audio.js"></script>
+    <script src="options.js"></script>
+  </body>
 </html>
