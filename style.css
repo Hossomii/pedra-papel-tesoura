@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Luckiest+Guy&display=swap');
+
+:root {
+  --fonte-principal: 'Bungee', Arial;
+  --fonte-secundaria: 'Luckiest Guy', Arial;
+  
+
+  --titulo: #ff00ff;         /* magenta neon */
+  --resultado: #00fff7;      /* ciano neon */
+  --verde-muito-claro: #39ff14; /* verde neon */
+  --marrom-claro: #ff0080;   /* rosa choque */
+  --amarelo: #fcee09;        /* amarelo neon */
+  --azul-escuro: #0a001a;    /* fundo quase preto com tom roxo */
+  --verde-forte: #08f26e;    /* verde neon mais forte */
+  --verde-claro: #08f26e;    
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: var(--fonte-principal);
+}
+body {
+  box-sizing: border-box;
+  background-color: var(--azul-escuro);
+  letter-spacing: 2px;
+}
+
+header {
+  color: var(--titulo);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  gap: 50px;
+  margin: 20px 0;
+}
+
+.container {
+  border-top: 3px solid rgba(255, 0, 255, 0.5);
+  border-left: 3px solid rgba(0, 255, 255, 0.5);
+  box-shadow: 5px 6px 0px 1px #000000;
+}
+
+div {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(26, 0, 26, 0.85); /* roxo translúcido */
+  border-radius: 5px;
+  padding: 10px;
+  width: 800px;
+  margin: auto;
+  gap: 10px;
+
+  /* borda para separar as divs */
+  border: 2px solid #ff00ff; 
+  box-shadow: 0 0 15px #ff00ff, 0 0 25px #00fff7; /* glow neon */
+}
+
+
+h2 {
+  color: var(--resultado);
+  font-family: var(--fonte-principal);
+}
+
+.container-btn {
+  width: 100%;
+  flex-direction: row;
+}
+
+button {
+  padding: 50px 50px;
+  margin: 10px 10px;
+  border-radius: 10px;
+  border: 3px solid #00fff7;
+  cursor: pointer;
+  background-color: #ff00ff;
+  color: #0a001a;
+  font-weight: bold;
+  transition: transform 0.2s ease, background-color 0.5s ease;
+}
+
+button:hover {
+  background-color: var(--amarelo);
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: #ff3131;
+  transform: scale(1.1);
+}
+
+i {
+  font-size: 70px;
+  color: var(--verde-muito-claro);
+}
+
+.resultado {
+  width: 100%;
+}
+
+.textNumVitorias {
+  color: var(--verde-muito-claro);
+}
+
+.textoResultado {
+  color: var(--resultado);
+  font-weight: bold;
+}
+
+h1, p {
+  font-family: var(--fonte-principal);
+  color: var(--titulo);
+}
+
+footer {
+  margin: 30px;
+  text-align: center;
+  color: var(--resultado);
+}
+
+.conquistaPopUp {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  display: none;
+}
+
+.conquistaPopUp.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
