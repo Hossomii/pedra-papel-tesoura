@@ -2,161 +2,233 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Luckiest+Guy&display=swap');
 
 :root {
-  --fonte-principal: 'Bungee', Arial;
-  --fonte-secundaria: 'Luckiest Guy', Arial;
-  
+  /* Fontes */
+  --fonte-principal: 'Bungee', monospace;
+  --fonte-secundaria: 'Luckiest Guy', monospace;
 
-  --titulo: #ff00ff;         /* magenta neon */
-  --resultado: #00fff7;      /* ciano neon */
-  --verde-muito-claro: #39ff14; /* verde neon */
-  --marrom-claro: #ff0080;   /* rosa choque */
-  --amarelo: #fcee09;        /* amarelo neon */
-  --azul-escuro: #0a001a;    /* fundo quase preto com tom roxo */
-  --verde-forte: #08f26e;    /* verde neon mais forte */
-  --verde-claro: #08f26e;    
+  /* Cores neon */
+  --titulo: #ff00ff;
+  --resultado: #00fff7;
+  --verde: #39ff14;
+  --amarelo: #fcee09;
+  --azul-escuro: #0a001a;
+
+  /* Tamanhos */
+  --font-pequena: clamp(0.6rem, 1vw, 0.9rem);
+  --font-normal: clamp(0.8rem, 1.5vw, 1.2rem);
+  --font-grande: clamp(1rem, 2vw, 1.5rem);
+  --icone: clamp(1.5rem, 4vw, 3rem);
+  --espaco: 1vh;
+  --espaco-menor: 0.5vh;
 }
 
+/* Reset */
 * {
   padding: 0;
   margin: 0;
   font-family: var(--fonte-principal);
 }
+
 body {
-  box-sizing: border-box;
   background-color: var(--azul-escuro);
-  letter-spacing: 2px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  letter-spacing: 1px;
 }
 
+/* Header estilo 8-bit */
 header {
   color: var(--titulo);
   display: flex;
-  text-align: center;
   justify-content: center;
-  gap: 50px;
-  margin: 20px 0;
+  gap: 20px;
+  margin: var(--espaco-menor) 0;
+  font-size: var(--font-grande);
+  text-shadow: 2px 2px #00fff7, -2px -2px #ff00ff;
 }
 
+/* Section principal */
 section {
-  margin-top: 10px;
-  margin-bottom: 30px;
-}
-
-.container {
-  border-top: 3px solid rgba(255, 0, 255, 0.5);
-  border-left: 3px solid rgba(0, 255, 255, 0.5);
-  box-shadow: 5px 6px 0px 1px #000000;
-}
-
-div {
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: rgba(26, 0, 26, 0.85); /* roxo translúcido */
-  border-radius: 5px;
-  padding: 10px;
-  width: 800px;
+
+  background-color: #1a001a;
+  border-radius: 0;
+  padding: 1.5vh;
+  width: 85vw;
+  height: 65vh;
   margin: auto;
-  gap: 10px;
+  gap: 1vh;
 
-  /* borda para separar as divs */
-  border: 2px solid #ff00ff; 
-  box-shadow: 0 0 15px #ff00ff, 0 0 25px #00fff7; /* glow neon */
+  text-align: center;
 }
 
+/* Container do jogo 8-bit cyberpunk */
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-h2 {
-  color: var(--resultado);
-  font-family: var(--fonte-principal);
+  background-color: #1a001a;
+  border-radius: 0;
+  padding: 1.2vh;
+  width: 50vw;
+  height: 45vh; /* mais compacto verticalmente */
+  margin: auto;
+  gap: 1.2vh;
+
+  border: 3px solid #ff00ff;
+  box-shadow: 
+    3px 3px 0 #00fff7,
+    -3px -3px 0 #ff00ff;
+
+  text-align: center;
 }
 
+/* Títulos e parágrafos */
+h1, h2, p {
+  color: var(--titulo);
+  font-size: var(--font-normal);
+  text-shadow: 1px 1px #00fff7, -1px -1px #ff00ff;
+}
+
+/* Botões do jogo */
 .container-btn {
   width: 100%;
-  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  gap: 0.5vw;
 }
 
-button {
-  padding: 50px 50px;
-  margin: 10px 10px;
-  border-radius: 10px;
-  border: 3px solid #00fff7;
+.btn-player {
+  padding: 1vh 2vw;
+  border-radius: 0; /* cantos quadrados 8-bit */
+  border: 2px solid #00fff7;
   cursor: pointer;
   background-color: #ff00ff;
   color: #0a001a;
   font-weight: bold;
-  transition: transform 0.2s ease, background-color 0.5s ease;
+  transition: all 0.2s;
+  font-size: var(--font-normal);
+  text-transform: uppercase;
 }
 
-button:hover {
+.btn-player:hover {
   background-color: var(--amarelo);
-  transform: scale(1.05);
+  box-shadow: 0 0 8px var(--amarelo);
 }
 
-button:active {
-  background-color: #ff3131;
-  transform: scale(1.1);
+.btn-player:active {
+  transform: scale(0.95);
 }
 
+/* Botão de voltar */
+.btn-voltar {
+  padding: 4px 8px;
+  font-size: var(--font-pequena);
+  border-radius: 0;
+  border: 2px solid #00fff7;
+  background-color: #ff00ff;
+  color: #0a001a;
+}
+
+/* Ícones grandes 8-bit */
 i {
-  font-size: 70px;
-  color: var(--verde-muito-claro);
+  font-size: var(--icone);
+  color: var(--verde);
+  text-shadow: 2px 2px #00fff7;
 }
 
+/* Resultado do jogo */
 .resultado {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: var(--font-normal);
+  padding: 8px;
+  background-color: #00000090;
+  border: 2px solid #00fff7;
+  box-shadow: 2px 2px 0 #ff00ff;
+  border-radius: 0;
 }
 
-.textNumVitorias {
-  color: var(--verde-muito-claro);
+/* Números de vitórias/empates */
+.textNumVitorias, .textNumEmpates {
+  color: var(--verde);
+  font-size: var(--font-normal);
 }
 
+/* Destaque do último resultado */
 .textoResultado {
   color: var(--resultado);
   font-weight: bold;
+  font-size: var(--font-grande);
+  text-shadow: 0 0 6px var(--resultado), 0 0 12px #ff00ff;
+  padding: 3px 6px;
+  border: 1px solid var(--resultado);
+  border-radius: 0;
+  background-color: #00000080;
 }
 
-h1, p {
-  font-family: var(--fonte-principal);
-  color: var(--titulo);
-}
-
+/* Pop-up de conquistas estilo 8-bit */
 .conquistaPopUp {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(-20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
   display: none;
+
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+
+  background: #000000cc;
+  color: var(--amarelo);
+  font-size: var(--font-pequena);
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 0;
+  border: 1px solid var(--resultado);
+  box-shadow: 0 0 4px var(--resultado);
+  text-align: center;
+  z-index: 1000;
+  max-width: 220px;
+  white-space: normal;
 }
 
 .conquistaPopUp.mostrar {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
 }
 
-.explicacao-jogo {
+/* Explicações do jogo */
+.explicacao-jogo, .explicacao-jogo-p {
   background: transparent;
   border: none;
   box-shadow: none;
   width: auto;
   padding: 0;
   color: white;
-  margin: 20px 0;
+  margin: 1vh 0;
+  font-size: var(--font-pequena);
 }
 
-.explicacao-jogo-p {
-  color: white;
-}
-
-ul {
-  list-style: none;
-}
-
-span {
-  color: var(--verde-muito-claro);
-}
-
+/* Footer */
 footer {
-  width: 500px;
+  display: flex;
+  width: 300px;
   margin: auto;
   text-align: center;
+  justify-content: center;
+  font-size: var(--font-pequena);
+  text-shadow: 1px 1px #00fff7;
 }

@@ -94,7 +94,7 @@ function escolhaPlayer(escolha) {
 
   // Atualiza o resultado na tela
   let divResultado = document.querySelector(".resultado");
-  divResultado.innerHTML = `O Computador escolheu: <strong>${computerMove}</strong> você escolheu: <strong>${escolha}</strong> o resultado foi: <span class = 'textoResultado'>${resultado}</span>`;
+  divResultado.innerHTML = `O Computador escolheu: ${computerMove}<br>Você escolheu: ${escolha}<br>O resultado foi: <span class = 'textoResultado'>${resultado}</span>`;
   resultStyle();
 }
 
@@ -107,7 +107,7 @@ function escolhaComputador() {
 function resultStyle() {
   const divTextResult = document.querySelector("div.resultado");
   divTextResult.style.color = "white";
-  divTextResult.style.fontSize = "16pt";
+  divTextResult.style.fontSize = "10pt";
   divTextResult.style.textTransform = "capitalize";
   divTextResult.style.fontFamily = "Bungee";
 }

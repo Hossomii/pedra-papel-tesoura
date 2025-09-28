@@ -17,16 +17,16 @@
       <h2 class="textNumEmpates">Empate: 0</h2>
     </header>
     <section>
-      <div class="container">
+      <div class="game-container">
         <h1 class="title">Firewall, Vírus ou Código?</h1>
         <div class="container-btn">
-          <button onclick="escolhaPlayer('firewall')">
+          <button class="btn-player" onclick="escolhaPlayer('firewall')">
             <i class="fa-solid fa-shield-halved"></i>
           </button>
-          <button onclick="escolhaPlayer('vírus')">
+          <button class="btn-player" onclick="escolhaPlayer('vírus')">
             <i class="fa-solid fa-skull"></i>
           </button>
-          <button onclick="escolhaPlayer('código')">
+          <button class="btn-player" onclick="escolhaPlayer('código')">
             <i class="fa-solid fa-laptop-code"></i>
           </button>
         </div>
@@ -34,9 +34,11 @@
           <p>Aguardando jogada...</p>
         </div>
       </div>
+      <button class="btn-voltar" onclick="window.location.href = 'menu.html'">Voltar</button>
     </section>
 
     <footer>
+      <!-- 
       <div class="explicacao-jogo">
         <h3>Regras do Jogo</h3>
         <p class="explicacao-jogo-p">Firewall, Vírus e Código é a versão futurista do clássico “pedra, papel e tesoura”.</p>
@@ -47,6 +49,7 @@
           <li><span>Código</span> contorna o <span>Firewall</span>.</li>
         </ul>
       </div>
+      -->
       <p class="copyR">2025 &copy Hossomi</p>
     </footer>
 

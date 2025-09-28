@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="colors.css">
+  <title>Game Options</title>
+</head>
+<body>
+  Dark Mode: <input type="button" id="ativar" value="Ativar" onclick="
+    document.body.classList.add('dark-mode');
+    "> 
+  
+  <input type="button" id="desativar" value="Desativar" onclick="
+    document.body.classList.remove('dark-mode')
+  ">
+
+  <input type="button" value="Voltar" onclick="window.location.href = 'menu.html'">
+
+  <script src="options.js">
+  </script>
+</body>
+</html>
