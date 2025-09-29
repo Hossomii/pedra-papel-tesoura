@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pedra, Papel ou Tesoura</title>
+    <title>Game Menu</title>
 
     <script>
       (function () {
@@ -13,51 +13,34 @@
         }
       })();
     </script>
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <div class="conquistaPopUp"></div>
-    <header>
-      <h2 class="textNumVitorias">Vitórias: 0</h2>
-      <h2 class="textNumEmpates">Empate: 0</h2>
-    </header>
-    <section>
-      <div class="game-container">
-        <h1 class="title">Pedra, Papel ou Tesoura?</h1>
-        <div class="container-btn">
-          <button class="btn-player" onclick="escolhaPlayer('pedra')">
-            <i class="fa-regular fa-hand-back-fist"></i>
-          </button>
-          <button class="btn-player" onclick="escolhaPlayer('papel')">
-            <i class="fa-regular fa-hand"></i>
-          </button>
-          <button class="btn-player" onclick="escolhaPlayer('tesoura')">
-            <i class="fa-regular fa-hand-peace"></i>
-          </button>
-        </div>
-        <div class="resultado">
-          <p>Aguardando jogada...</p>
-        </div>
-      </div>
-      <div>
-        <button class="btn-voltar" onclick="window.location.href = 'menu.html'">
-          Voltar
-        </button>
-        <button class="btn-voltar" onclick="reiniciar()">Reiniciar</button>
-      </div>
-    </section>
+    <h1 class="menu-h1">Pedra, papel ou tesoura</h1>
+
+    <div class="menu-container">
+      <button
+        class="btn-menu btn-play"
+        onclick="window.location.href = 'jogo.html';"
+      >
+        Play
+      </button>
+
+      <button
+        class="btn-menu btn-secondary"
+        onclick="window.location.href ='options.html';"
+      >
+        Options
+      </button>
+
+      <button class="btn-menu btn-secondary" onclick="window.location.href = 'credits.html';">Credits</button>
+    </div>
 
     <footer>
       <p class="copyR">2025 &copy Hossomi</p>
     </footer>
 
-    <script src="audio.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
