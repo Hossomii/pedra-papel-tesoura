@@ -1,26 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Luckiest+Guy&display=swap');
 
-/* --- Variáveis Globais --- */
 :root {
-  /* Cores Neon */
   --titulo: #ff00ff;
   --resultado: #00fff7;
   --verde: #39ff14;
   --amarelo: #fcee09;
   --azul-escuro: #0a001a;
-
-  /* Fonte */
   --fonte-principal: 'Bungee', monospace;
-
-  /* Tamanhos de Fonte Responsivos */
+  --fonte-secundaria: 'Luckiest Guy', monospace;
   --font-pequena: clamp(0.7rem, 1vw, 0.9rem);
   --font-normal: clamp(0.9rem, 1.5vw, 1.2rem);
   --font-grande: clamp(1.1rem, 2vw, 1.5rem);
   --icone: clamp(2rem, 4vw, 3rem);
 }
 
-
-/* --- Reset e Layout Principal --- */
 * {
   padding: 0;
   margin: 0;
@@ -31,13 +25,14 @@
 body {
   background-color: var(--azul-escuro);
   color: white;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2vh 0;
   gap: 3vh;
+  text-align: center;
 }
 
 header {
@@ -62,26 +57,20 @@ footer {
   opacity: 0.7;
 }
 
-
-/* --- Container Principal do Jogo --- */
 .game-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   gap: 2vh;
-  
   width: clamp(300px, 50vw, 700px);
   min-height: 45vh;
   padding: 2vh;
-  
   background-color: #1a001acc;
   border: 3px solid var(--titulo);
   animation: neon-pulse 4s infinite ease-in-out;
 }
 
-
-/* --- Textos e Ícones --- */
 h1 {
   font-size: var(--font-grande);
   color: var(--titulo);
@@ -99,8 +88,6 @@ i {
   transition: all 0.2s ease;
 }
 
-
-/* --- Botões e Interatividade --- */
 .container-btn {
   display: flex;
   justify-content: center;
@@ -120,7 +107,7 @@ i {
 
 .btn-player:hover {
   background-color: var(--amarelo);
-  box-shadow: 0 0 8px var(--amarelo); /* AJUSTADO: de 15px para 8px */
+  box-shadow: 0 0 8px var(--amarelo);
   transform: translateY(-4px);
 }
 
@@ -147,11 +134,9 @@ i {
 }
 
 .btn-voltar:hover{
-    background-color: var(--amarelo);
+  background-color: var(--amarelo);
 }
 
-
-/* --- Feedback Visual (Resultados e Pop-ups) --- */
 .resultado {
   background-color: #00000090;
   border: 2px solid var(--resultado);
@@ -171,7 +156,7 @@ i {
   color: var(--amarelo);
   font-size: var(--font-grande);
   font-weight: bold;
-  text-shadow: 0 0 5px var(--amarelo); /* AJUSTADO: de 8px para 5px */
+  text-shadow: 0 0 5px var(--amarelo);
   padding: 5px 8px;
   background-color: #00000080;
   border: 1px solid var(--amarelo);
@@ -187,7 +172,7 @@ i {
   font-size: var(--font-pequena);
   padding: 8px 15px;
   border: 2px solid var(--amarelo);
-  box-shadow: 0 0 7px var(--amarelo); /* AJUSTADO: de 10px para 7px */
+  box-shadow: 0 0 7px var(--amarelo);
   text-align: center;
   z-index: 1000;
   opacity: 0;
@@ -199,26 +184,23 @@ i {
   transform: translateX(-50%) translateY(0);
 }
 
-
-/* --- Animações --- */
 @keyframes neon-pulse {
   0%, 100% {
     box-shadow: 
       3px 3px 0 var(--resultado), 
       -3px -3px 0 var(--titulo),
-      0 0 5px var(--titulo),  /* AJUSTADO: de 10px para 5px */
-      0 0 10px var(--titulo); /* AJUSTADO: de 20px para 10px */
+      0 0 5px var(--titulo),
+      0 0 10px var(--titulo);
   }
   50% {
     box-shadow: 
       3px 3px 0 var(--resultado), 
       -3px -3px 0 var(--titulo),
-      0 0 10px var(--resultado), /* AJUSTADO: de 20px para 10px */
-      0 0 20px var(--resultado); /* AJUSTADO: de 40px para 20px */
+      0 0 10px var(--resultado),
+      0 0 20px var(--resultado);
   }
 } 
 
-/* --- ESTILOS ESPECÍFICOS DO MENU E OPÇÕES --- */
 .btn-play {
   color: var(--titulo);
   text-shadow:
@@ -234,10 +216,9 @@ i {
 
 .option-group h3 {
   color: var(--amarelo);
-  text-shadow: 0 0 3px var(--amarelo); /* AJUSTADO: de 5px para 3px */
+  text-shadow: 0 0 3px var(--amarelo);
 }
 
-/* --- AJUSTES DO TEMA SUAVE PARA MENU E OPÇÕES --- */
 html.soft-mode .btn-play,
 html.soft-mode .btn-secondary,
 html.soft-mode .option-group h3 {
@@ -247,12 +228,9 @@ html.soft-mode .btn-play { color: var(--titulo); }
 html.soft-mode .btn-secondary { color: var(--verde); }
 html.soft-mode .option-group h3 { color: var(--amarelo); }
 
-
-/* --- TEMA SUAVE --- */
 html.soft-mode {
   --azul-escuro: #444449; 
   color: #e5e5e5; 
-
   --titulo: #ffadeb;
   --resultado: #a6f7f3;
   --verde: #b5ff9f;
@@ -284,7 +262,6 @@ html.soft-mode .btn-player:hover {
   box-shadow: none;
 }
 
-/* Caixa de resultado */
 html.soft-mode .resultado {
   color: #e5e5e5;
 }
@@ -295,15 +272,14 @@ html.soft-mode .textoResultado {
   background-color: rgba(0,0,0,0.2);
 }
 
-/* Botão Voltar */
 html.soft-mode .btn-voltar {
-    background-color: transparent;
-    border: 2px solid var(--amarelo);
-    color: var(--amarelo);
+  background-color: transparent;
+  border: 2px solid var(--amarelo);
+  color: var(--amarelo);
 }
 html.soft-mode .btn-voltar:hover {
-    background-color: var(--amarelo);
-    color: #333;
+  background-color: var(--amarelo);
+  color: #333;
 }
 
 .explicacao-jogo {
@@ -318,4 +294,215 @@ html.soft-mode .btn-voltar:hover {
 }
 ul {
   list-style: none;
+}
+
+/* Estilos para o menu.html */
+.menu-h1 {
+  font-family: var(--fonte-secundaria);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2vh;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5vh;
+}
+
+.btn-menu {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: transform 0.2s ease, text-shadow 0.2s ease;
+  text-transform: uppercase;
+}
+
+.btn-menu:active {
+  transform: scale(0.95);
+}
+
+.btn-play {
+  font-size: clamp(5rem, 15vw, 10rem);
+  line-height: 1; 
+}
+
+.btn-play:hover {
+  transform: scale(1.02);
+}
+
+.btn-secondary {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+/* Estilos para o options.html */
+#options-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5vh;
+  width: clamp(300px, 50vw, 700px);
+  min-height: 45vh;
+  padding: 2vh;
+  background-color: #1a001acc;
+  border: 3px solid var(--titulo);
+  animation: neon-pulse 4s infinite ease-in-out;
+}
+
+#options-container h1 {
+  font-size: var(--font-grande);
+  margin-bottom: 2vh; 
+}
+
+.option-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5vh;
+  width: 100%;
+  padding: 15px;
+  border: 2px solid var(--resultado);
+  background-color: #00000090;
+}
+
+.option-group h3 {
+  font-size: var(--font-normal);  
+}
+
+#options-container .btn-voltar {
+  margin-top: 20px;
+}
+
+.options-h1 {
+  font-size: var(--font-grande);
+  color: var(--titulo);
+  text-shadow: 1px 1px 0 var(--resultado);
+  margin-bottom: 2vh; /* ou o valor que desejar */
+}
+
+html.soft-mode .options-h1 {
+  text-shadow: none;
+  color: var(--titulo);
+}
+
+/* Estilos para o credits.html */
+.credits-h1 { /* Novo seletor para o H1 dos créditos */
+  font-size: var(--font-grande);
+  color: var(--titulo);
+  text-shadow: 1px 1px 0 var(--resultado);
+  margin-bottom: 1vh; /* Espaçamento menor para o h1 dos créditos */
+}
+
+.credits-h3 { /* Novo seletor para o H3 dos créditos */
+  color: var(--amarelo);
+  text-shadow: 0 0 3px var(--amarelo);
+  margin-bottom: 2vh; /* Espaço abaixo do h3 */
+}
+
+.credits-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--font-normal);
+  line-height: 1.6;
+  text-align: center;
+  color: #ddd;
+  padding: 0 10px;
+  margin-bottom: 2vh; /* Adiciona espaço abaixo do texto */
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 2vh; /* Adiciona espaço abaixo dos links, antes do botão Voltar */
+}
+
+.social-link {
+  color: var(--resultado);
+  border: 2px solid var(--resultado);
+  padding: 5px 12px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-pequena);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: var(--resultado);
+  color: var(--azul-escuro);
+  box-shadow: 0 0 8px var(--resultado);
+  transform: translateY(-3px);
+}
+
+.social-link i {
+  color: inherit;
+  font-size: 1rem;
+  text-shadow: none;
+}
+
+.credits-btn-voltar { /* Novo seletor para o botão Voltar dos créditos */
+  margin-top: 25px; /* Garante espaço acima do botão Voltar */
+  background-color: var(--titulo);
+  color: var(--azul-escuro);
+  border: 2px solid var(--resultado);
+  padding: 8px 16px;
+  font-size: var(--font-normal);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.credits-btn-voltar:hover {
+  background-color: var(--amarelo);
+  box-shadow: 0 0 8px var(--amarelo);
+  transform: translateY(-3px);
+}
+
+/* AJUSTES TEMA SUAVE PARA CRÉDITOS */
+html.soft-mode .credits-h1,
+html.soft-mode .credits-h3 {
+  text-shadow: none;
+}
+
+html.soft-mode .credits-h1 {
+  color: var(--titulo);
+}
+
+html.soft-mode .credits-h3 {
+  color: var(--amarelo);
+}
+
+html.soft-mode .credits-text {
+  color: #e5e5e5;
+}
+
+html.soft-mode .social-link {
+  background-color: transparent;
+  border-color: var(--amarelo);
+  color: var(--amarelo);
+}
+
+html.soft-mode .social-link:hover {
+  background-color: var(--amarelo);
+  color: #333;
+  box-shadow: none;
+}
+
+html.soft-mode .credits-btn-voltar {
+  background-color: transparent;
+  border: 2px solid var(--amarelo);
+  color: var(--amarelo);
+}
+
+html.soft-mode .credits-btn-voltar:hover {
+  background-color: var(--amarelo);
+  color: #333;
+  box-shadow: none;
 }

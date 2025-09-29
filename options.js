@@ -11,8 +11,8 @@ btnMudo.addEventListener('click', () => {
 });
 
 btnMedio.addEventListener('click', () => {
-  localStorage.setItem('volumeLevel', '0.5');
-  alert('Volume em 50%.');
+  localStorage.setItem('volumeLevel', '0.3');
+  alert('Volume em 30%.');
 });
 
 btnAlto.addEventListener('click', () => {

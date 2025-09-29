@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Credits</title>
+
+    <script>
+      (function () {
+        const theme = localStorage.getItem("theme");
+        if (theme === "soft") {
+          document.documentElement.classList.add("soft-mode");
+        }
+      })();
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="credits-h1">Obrigado por Jogar!</h1>
+    <h3 class="credits-h3">Créditos:</h3>
+
+    <div class="game-container">
+      <p class="credits-text">
+        Criei este jogo em 2025, e ele é meu primeiro projeto como o
+        Desenvolvedor.<br /><br />
+        Quero expressar um imenso carinho e gratidão a todos que testaram e
+        curtiram (nem que tenha sido só um pouquinho!) a primeira versão.
+        Futuramente: O jogo terá atualizações à medida que eu aprendo mais,
+        transformando o que hoje é um simples pedra-papel-tesoura em algo
+        realmente diferente e divertido! com mais opções, níveis, conquistas e
+        funcionalidades!<br /><br />
+        Se quiser acompanhar meus próximos passos e projetos, minhas redes
+        sociais estão disponíveis logo abaixo:
+      </p>
+
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/anthony-silveira-bugs/" target="_blank" class="social-link">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/Hossomii" target="_blank" class="social-link">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+      </div>
+    </div> 
+    
+    <button class="btn-voltar credits-btn-voltar" onclick="window.location.href ='menu.html';">
+      Voltar ao Menu
+    </button>
+
+    <footer>
+      <p class="copyR">2025 &copy; Hossomi</p>
+    </footer>
+
+    </body>
+</html>

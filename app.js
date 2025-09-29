@@ -71,11 +71,10 @@ function escolhaPlayer(escolha) {
   if (resultado === "você ganhou") {
     numeroDeVitorias++;
     textNumVitorias.innerHTML = `Vitórias: ${numeroDeVitorias}`;
-  } 
-  else if (resultado === "você perdeu") {
+  } else if (resultado === "você perdeu") {
     numeroDeVitorias = 0; // Zera se perder
     textNumVitorias.innerHTML = `Vitórias: 0`;
-  } 
+  }
 
   if (resultado === "empate") {
     empates++;
@@ -98,7 +97,7 @@ function escolhaPlayer(escolha) {
   resultStyle();
 }
 
-// Função para escolha aleatória do computador 
+// Função para escolha aleatória do computador
 function escolhaComputador() {
   const opcoes = ["pedra", "papel", "tesoura"];
   return opcoes[Math.floor(Math.random() * 3)];
@@ -114,12 +113,11 @@ function resultStyle() {
 
 // Função de áudio
 function audio(resultado) {
-  const soundToPlay = resultado === 'você perdeu' ? "gameover.wav" : "win.wav";
+  const soundToPlay = resultado === "você perdeu" ? "gameover.wav" : "win.wav";
   playSound(soundToPlay); // Chama a função e usa o resultado como parametro para tocar o áudio correto
 }
 
 function verificarConquista(vitorias) {
-
   for (let item of conquistas) {
     if (vitorias === item.vitorias && !item.desbloqueada) {
       item.desbloqueada = true;
@@ -137,13 +135,52 @@ function exibirConquista(texto) {
   conquistaPopUp.style.color = "white";
   conquistaPopUp.innerHTML = ` ${texto} `;
 
-
   conquistaPopUp.classList.add("mostrar"); // Adiciona a classe que está ligada ao css de transição
 
   setTimeout(() => {
-    conquistaPopUp.classList.remove("mostrar"); 
+    conquistaPopUp.classList.remove("mostrar");
     setTimeout(() => {
       conquistaPopUp.style.display = "none";
     }, 500);
-  }, 3000); 
+  }, 3000);
+}
+
+function reiniciar() {
+  // 1. Resetar as variáveis de placar
+  numeroDeVitorias = 0;
+  empates = 0;
+
+  // 2. Resetar o estado das conquistas para que possam ser obtidas novamente
+  conquistas.forEach((conquista) => {
+    conquista.desbloqueada = false;
+  });
+
+  // 3. Atualizar a exibição do placar e do resultado na tela
+  let textNumVitorias = document.querySelector(".textNumVitorias");
+  let textNumEmpates = document.querySelector(".textNumEmpates");
+  let divResultado = document.querySelector(".resultado");
+  let conquistaPopUp = document.querySelector(".conquistaPopUp"); // Garante que o popup está referenciado
+
+  if (textNumVitorias) {
+    textNumVitorias.innerHTML = `Vitórias: ${numeroDeVitorias}`;
+  }
+  if (textNumEmpates) {
+    textNumEmpates.innerHTML = `Empates: ${empates}`;
+  }
+  if (divResultado) {
+    divResultado.innerHTML = `Jogo reiniciado. Faça sua escolha!`;
+    // Opcional: Remover estilos dinâmicos de 'resultado'
+    divResultado.style.color = "white";
+    divResultado.style.fontSize = "10pt";
+    divResultado.style.textTransform = "capitalize";
+    divResultado.style.fontFamily = "Bungee";
+  }
+
+  // 4. Ocultar o popup de conquista
+  if (conquistaPopUp) {
+    conquistaPopUp.style.display = "none";
+    conquistaPopUp.classList.remove("mostrar");
+  }
+
+  alert("[Jogo Reiniciado]");
 }
