@@ -1,3 +1,41 @@
+// Música Background
+
+const musica = document.getElementById('musicaFundo');
+const btnSom = document.getElementById('btnSom');
+
+if (musica && btnSom) {
+  musica.volume = 0.1;
+
+  // Verificação estado salvo ---
+  function aplicarEstadoSom() {
+    const estadoSalvo = localStorage.getItem('estadoSom');
+
+    if (estadoSalvo === 'ligado') {
+      musica.muted = false;
+      btnSom.innerHTML = '<i class="fas fa-volume-up"></i>';
+    } else {
+      musica.muted = true;
+      btnSom.innerHTML = '<i class="fas fa-volume-mute"></i>';
+    }
+  }
+
+  // AO CLICAR NO BOTÃO: Invertem e salva o novo estado
+  btnSom.addEventListener('click', function() {
+    musica.muted = !musica.muted;
+
+    if (musica.muted) {
+      btnSom.innerHTML = '<i class="fas fa-volume-mute"></i>';
+      localStorage.setItem('estadoSom', 'desligado');
+    } else {
+      btnSom.innerHTML = '<i class="fas fa-volume-up"></i>';
+      localStorage.setItem('estadoSom', 'ligado');
+    }
+  });
+
+  // Roda a função uma vez assim que a página carrega para aplicar a preferência
+  aplicarEstadoSom();
+}
+
 // Variáveis Principais
 let numeroDeVitorias = 0;
 let empates = 0;
@@ -184,3 +222,5 @@ function reiniciar() {
 
   alert("[Jogo Reiniciado]");
 }
+
+

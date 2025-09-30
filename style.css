@@ -506,3 +506,45 @@ html.soft-mode .credits-btn-voltar:hover {
   color: #333;
   box-shadow: none;
 }
+
+/* --- Estilos para o Botão de Som --- */
+#btnSom {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000; /* Garante que ele fique acima de outros elementos */
+
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Estilo Neon (Padrão) */
+  background-color: transparent;
+  color: var(--resultado);
+  border: 2px solid var(--resultado);
+  border-radius: 0;
+  cursor: pointer;
+  font-size: var(--font-normal);
+  transition: all 0.2s ease;
+}
+
+#btnSom:hover {
+  background-color: var(--resultado);
+  color: var(--azul-escuro);
+  box-shadow: 0 0 8px var(--resultado);
+  transform: scale(1.1);
+}
+
+/* --- Ajuste do Botão de Som para o Tema Suave --- */
+html.soft-mode #btnSom {
+  color: var(--amarelo);
+  border-color: var(--amarelo);
+}
+
+html.soft-mode #btnSom:hover {
+  background-color: var(--amarelo);
+  color: #333;
+  box-shadow: none;
+}

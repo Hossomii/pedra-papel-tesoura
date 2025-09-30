@@ -14,11 +14,15 @@
       })();
     </script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   </head>
   <body>
+    <audio id="musicaFundo" src="backgroundmusic.mp3" autoplay loop muted></audio>
+    <button id="btnSom">
+      <i class="fas fa-volume-mute"></i>
+    </button>
+
     <h1 class="credits-h1">Obrigado por Jogar!</h1>
     <h3 class="credits-h3">Créditos:</h3>
 
@@ -54,5 +58,6 @@
       <p class="copyR">2025 &copy; Hossomi</p>
     </footer>
 
+    <script src="app.js"></script>
     </body>
 </html>
